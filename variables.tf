@@ -72,6 +72,7 @@ variable "db_cluster_parameter_group_name" {
 variable "iam_database_authentication_enabled" {
   description = "Specifies whether or mappings of AWS Identity and Access Management (IAM) accounts to database accounts is enabled."
   type        = bool
+  default     = false
 }
 
 variable "kms_key_id" {

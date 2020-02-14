@@ -32,7 +32,7 @@ _Below we are able to check the resources that are being created as part of this
 
 _To use this module, add the following call to your code:_
 
-* _**Example Postgresql RDS without Serverless**_
+* _**Example Postgresql RDS**_
 
 ```tf
 module "rds_cluster" {
@@ -67,6 +67,41 @@ module "rds_cluster" {
 }
 ```
 
+* _**Example Postgresql RDS with Serverless**_
+
+
+```tf
+module "rds_cluster" {
+  source = "git::https://github.com/nitinda/terraform-module-aws-rds-cluster.git?ref=master"
+
+  providers = {
+    aws = aws.services
+  }
+
+  # Tags
+  tags = {
+    Project      = "POC"
+    Owner        = "Platform Team"
+    Environment  = "prod"
+    BusinessUnit = "Platform Team"
+    ManagedBy    = "Terraform"
+    Application  = "RDS Cluster Parameter Group"
+  }
+
+  # RDS
+  engine                               = "aurora-postgresql"
+  engine_version                       = "9.6.9"
+  engine_mode                          = "provisioned"
+  database_name                        = "postgresql"
+  cluster_identifier_prefix            = "postgresql-cluster"
+  master_username                      = "postgresql"
+  master_password                      = "postgresql123"
+  db_subnet_group_name                 = var.db_subnet_group_name
+  db_cluster_parameter_group_name      = var.db_cluster_parameter_group_name
+  vpc_security_group_ids               = var.vpc_security_group_ids
+  port                                 = 5432
+}
+```
 
 ---
 
@@ -89,7 +124,7 @@ _The variables required in order for the module to be successfully called from t
 | **_db\_subnet\_group\_name_** | _DB subnet group name_ | _list(string)_ | **_Required_** |
 | **_vpc\_security\_group\_ids_** | _List of VPC security groups ids_ | _list(string)_ | **_Required_** |
 | **_db\_cluster\_parameter\_group\_name_** | _RDS cluster parameter group_ | _string_ | **_Required_** |
-| **_iam\_database\_authentication\_enabled_** | _Specifies whether or mappings AWS IAM_ | _bool_ | **_Required_** |
+| **_iam\_database\_authentication\_enabled_** | _Specifies whether or mappings AWS IAM_ | _bool_ | **_Optional (Default false)_** |
 | **_kms\_key\_id_** | _The ARN for the KMS encryption key_ | _string_ | **_Optional (Default null)_** |
 | **_scaling\_configuration_** | _Nested attribute with scaling_ | _any_ | **_Optional (Default [])_** |
 | **_tags_** | _Resource tags_ | _map(string)_ | **_Required_** |
