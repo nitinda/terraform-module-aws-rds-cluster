@@ -52,7 +52,7 @@ _The variables required in order for the module to be successfully called from t
 | **_engine_** | _The name of the database engine_ | _string_ | **_Required_** |
 | **_engine\_mode_** | _The database engine mode_ | _string_ | **_Required_** |
 | **_engine\_version_** | _The database engine mode_ | _string_ | **_Required_** |
-| **_database\_name_** | _Name for an automatically created database on cluster creation_ | _string_ | **_Required_** |
+| **_database\_name_** | _Database Name_ | _string_ | **_Required_** |
 | **_db\_cluster\_identifier\_prefix_** | _Creates a unique cluster identifier_ | _string_ | **_Required_** |
 | **_master\_username_** | _Username for the master DB_ | _string_ | **_Required_** |
 | **_master\_password_** | _Password for the master DB_ | _string_ | **_Required_** |
