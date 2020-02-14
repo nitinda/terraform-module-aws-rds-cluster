@@ -30,11 +30,14 @@ variable "master_password" {
 
 variable "storage_encrypted" {
   description = "Specifies whether the DB cluster is encrypted"
+  type        = bool
+  default     = false
 }
 
 variable "skip_final_snapshot" {
   description = "Determines whether a final DB snapshot is created before the DB cluster is deleted."
   default     = false
+  type        = bool
 }
 
 variable "backup_retention_period" {
@@ -49,6 +52,8 @@ variable "port" {
 
 variable "apply_immediately" {
   description = "Determines whether or not any DB modifications are applied immediately, or during the maintenance window"
+  default     = false
+  type        = bool
 }
 
 variable "db_subnet_group_name" {
@@ -66,6 +71,7 @@ variable "db_cluster_parameter_group_name" {
 
 variable "iam_database_authentication_enabled" {
   description = "Specifies whether or mappings of AWS Identity and Access Management (IAM) accounts to database accounts is enabled."
+  type        = bool
 }
 
 variable "kms_key_id" {
