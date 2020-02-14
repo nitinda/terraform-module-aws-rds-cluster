@@ -34,7 +34,7 @@ _To use this module, add the following call to your code:_
 
 ```tf
 module "rds_cluster" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-rds-cluster.git?ref=terraform-12/master"
+  source = "git::https://github.com/nitinda/terraform-module-aws-rds-cluster.git?ref=master"
 
 
 }
@@ -47,7 +47,7 @@ module "rds_cluster" {
 
 _The variables required in order for the module to be successfully called from the deployment repository are the following:_
 
-|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
+|**_Variable_** | **_Description_** | **_Type_** | **_Argument Comments_** |
 |:----|:----|-----:|:---:|
 | **_engine_** | _The name of the database engine_ | _string_ | **_Required_** |
 | **_engine\_mode_** | _The database engine mode_ | _string_ | **_Required_** |
