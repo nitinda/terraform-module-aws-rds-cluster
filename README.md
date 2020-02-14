@@ -32,11 +32,38 @@ _Below we are able to check the resources that are being created as part of this
 
 _To use this module, add the following call to your code:_
 
+* _**Example Postgresql RDS without Serverless**_
+
 ```tf
 module "rds_cluster" {
   source = "git::https://github.com/nitinda/terraform-module-aws-rds-cluster.git?ref=master"
 
+  providers = {
+    aws = aws.services
+  }
 
+  # Tags
+  tags = {
+    Project      = "POC"
+    Owner        = "Platform Team"
+    Environment  = "prod"
+    BusinessUnit = "Platform Team"
+    ManagedBy    = "Terraform"
+    Application  = "RDS Cluster Parameter Group"
+  }
+
+  # RDS
+  engine                               = "aurora-postgresql"
+  engine_version                       = "9.6.9"
+  engine_mode                          = "provisioned"
+  database_name                        = "postgresql"
+  cluster_identifier_prefix            = "postgresql-cluster"
+  master_username                      = "postgresql"
+  master_password                      = "postgresql123"
+  db_subnet_group_name                 = var.db_subnet_group_name
+  db_cluster_parameter_group_name      = var.db_cluster_parameter_group_name
+  vpc_security_group_ids               = var.vpc_security_group_ids
+  port                                 = 5432
 }
 ```
 
