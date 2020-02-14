@@ -1,6 +1,7 @@
 resource "aws_rds_cluster" "rds_cluster" {
   engine                              = var.engine
   engine_mode                         = var.engine_mode
+  engine_version                      = var.engine_version
   database_name                       = var.database_name
   cluster_identifier_prefix           = format("%s-rds-", var.cluster_identifier_prefix)
   master_username                     = var.master_username

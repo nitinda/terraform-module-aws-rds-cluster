@@ -50,21 +50,22 @@ _The variables required in order for the module to be successfully called from t
 |**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
 |:----|:----|-----:|:---:|
 | **_tags_** | _Resource tags_ | _map(string)_ | **_Required_** |
-| **_engine_** | The name of the database engine | string |
-| **_engine\_mode_** | The database engine mode | string |
-| **_database\_name_** | Catabase name | string |
-| **_db\_cluster\_identifier\_prefix_** | Creates a unique cluster identifier | string |
-| **_master\_username_** | Username for the master DB | string |
-| **_master\_password_** | Password for the master DB | string |
-| **_storage\_encrypted_** | Specifies whether the DB | string |
-| **_skip\_final\_snapshot_** | Determines whether a final DB snapshot | string |
-| **_apply\_immediately_** | Determines whether or not any DB modify | string |
-| **_db\_subnet\_group\_name_** | DB subnet group name | list |
-| **_vpc\_security\_group\_ids_** | List of VPC security groups | map |
-| **_db\_cluster\_parameter\_group\_name_** | A cluster parameter group | list |
-| **_iam\_database\_authentication\_enabled_** | Specifies whether or mappings AWS IAM | list of map |
-| **_kms\_key\_id_** | The ARN for the KMS | list of map |
-| **_scaling\_configuration_** | Nested attribute with scaling | list of map |
+| **_engine_** | _The name of the database engine_ | _string_ | **_Required_** |
+| **_engine\_mode_** | _The database engine mode_ | _string_ | **_Required_** |
+| **_engine\_version_** | _The database engine mode_ | string | **_Required_** |
+| **_database\_name_** | _Name for an automatically created database on cluster creation_ | _string_ | **_Required_** |
+| **_db\_cluster\_identifier\_prefix_** | _Creates a unique cluster identifier_ | _string_ | **_Required_** |
+| **_master\_username_** | Username for the master DB | string | **_Required_** |
+| **_master\_password_** | Password for the master DB | string | **_Required_** |
+| **_storage\_encrypted_** | Specifies whether the DB | string | **_Required_** |
+| **_skip\_final\_snapshot_** | Determines whether a final DB snapshot | string | **_Required_** |
+| **_apply\_immediately_** | Determines whether or not any DB modify | string | **_Required_** |
+| **_db\_subnet\_group\_name_** | DB subnet group name | list | **_Required_** |
+| **_vpc\_security\_group\_ids_** | List of VPC security groups | map | **_Required_** |
+| **_db\_cluster\_parameter\_group\_name_** | A cluster parameter group | list | **_Required_** |
+| **_iam\_database\_authentication\_enabled_** | Specifies whether or mappings AWS IAM | list of map | **_Required_** |
+| **_kms\_key\_id_** | The ARN for the KMS | list of map | **_Required_** |
+| **_scaling\_configuration_** | Nested attribute with scaling | list of map | **_Optional_** |
 
 
 ---
