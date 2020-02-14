@@ -116,6 +116,7 @@ _The variables required in order for the module to be successfully called from t
 | **_engine\_version_** | _The database engine mode_ | _string_ | **_Required_** |
 | **_database\_name_** | _Database Name_ | _string_ | **_Required_** |
 | **_db\_cluster\_identifier\_prefix_** | _Creates a unique cluster identifier_ | _string_ | **_Required_** |
+| **_copy\_tags\_to\_snapshot_** | _Copy all Cluster tags to snapshots_ | _string_ | **_Optional (Default false)_** |
 | **_master\_username_** | _Username for the master DB_ | _string_ | **_Required_** |
 | **_master\_password_** | _Password for the master DB_ | _string_ | **_Required_** |
 | **_storage\_encrypted_** | _Specifies whether the DB_ | _bool_ | **_Optional (Default false)_** |

@@ -20,6 +20,12 @@ variable "cluster_identifier_prefix" {
   description = "Creates a unique cluster identifier beginning with the specified prefix"
 }
 
+variable "copy_tags_to_snapshot" {
+  description = " Copy all Cluster tags to snapshots"
+  type        = bool
+  default     = false
+}
+
 variable "master_username" {
   description = "Username for the master DB user"
 }

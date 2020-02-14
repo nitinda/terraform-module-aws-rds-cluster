@@ -4,6 +4,7 @@ resource "aws_rds_cluster" "rds_cluster" {
   engine_version                      = var.engine_version
   database_name                       = var.database_name
   cluster_identifier_prefix           = format("%s-rds-", var.cluster_identifier_prefix)
+  copy_tags_to_snapshot               = var.copy_tags_to_snapshot
   master_username                     = var.master_username
   master_password                     = var.master_password
   storage_encrypted                   = var.storage_encrypted
