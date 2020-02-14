@@ -91,15 +91,17 @@ module "rds_cluster" {
   # RDS
   engine                               = "aurora-postgresql"
   engine_version                       = "9.6.9"
-  engine_mode                          = "provisioned"
+  engine_mode                          = "serverless"
   database_name                        = "postgresql"
   cluster_identifier_prefix            = "postgresql-cluster"
   master_username                      = "postgresql"
   master_password                      = "postgresql123"
+  storage_encrypted                    = true
   db_subnet_group_name                 = var.db_subnet_group_name
   db_cluster_parameter_group_name      = var.db_cluster_parameter_group_name
   vpc_security_group_ids               = var.vpc_security_group_ids
   port                                 = 5432
+  kms_key_id                           = var.kms_key_id_arn
 }
 ```
 
