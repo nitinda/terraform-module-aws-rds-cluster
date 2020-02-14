@@ -8,6 +8,10 @@ variable "engine_mode" {
   description = "The database engine mode."
 }
 
+variable "engine_version" {
+  description = "The database engine version"
+}
+
 variable "database_name" {
   description = "Name for an automatically created database on cluster creation."
 }
